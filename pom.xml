@@ -1,0 +1,229 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.esoft.kingston</groupId>
+  <artifactId>ecart</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Ecart Devs Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+  	<properties>
+		<spring.version>5.1.0.RELEASE</spring.version>
+		<hibernate.version>5.2.17.Final</hibernate.version>
+		<hibernate.validator>5.4.1.Final</hibernate.validator>
+		<c3p0.version>0.9.5.2</c3p0.version>
+		<jstl.version>1.2.1</jstl.version>
+		<tld.version>1.1.2</tld.version>
+		<servlets.version>3.1.0</servlets.version>
+		<jsp.version>2.3.1</jsp.version>
+		<log4j.version>1.2.17</log4j.version>
+		<jackson.databind-version>2.9.4</jackson.databind-version>
+	</properties>
+  
+  <dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- Jackson -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.databind-version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- Spring ORM -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+
+		<!-- Hibernate Validator -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>${hibernate.validator}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>2.1.0.RELEASE</version>
+		</dependency>
+
+		<!-- JSTL Dependency -->
+		<dependency>
+			<groupId>javax.servlet.jsp.jstl</groupId>
+			<artifactId>javax.servlet.jsp.jstl-api</artifactId>
+			<version>${jstl.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>${tld.version}</version>
+		</dependency>
+
+		<!-- Servlet Dependency -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${servlets.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- JSP Dependency -->
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>${jsp.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>8.0.19</version>
+		</dependency>
+
+		<!-- logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>1.7.20</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.1.7</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
+		<dependency>
+		    <groupId>javax.annotation</groupId>
+		    <artifactId>javax.annotation-api</artifactId>
+		    <version>1.3.2</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
+		<dependency>
+		    <groupId>javax.xml.bind</groupId>
+		    <artifactId>jaxb-api</artifactId>
+		    <version>2.3.1</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.javassist</groupId>
+		    <artifactId>javassist</artifactId>
+		    <version>3.23.1-GA</version>
+		</dependency>
+		<dependency>
+		    <groupId>cglib</groupId>
+		    <artifactId>cglib-nodep</artifactId>
+		    <version>3.2.7</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-core -->
+		<dependency>
+		    <groupId>org.apache.tiles</groupId>
+		    <artifactId>tiles-core</artifactId>
+		    <version>3.0.7</version>
+		</dependency>
+		
+		<!-- http://mvnrepository.com/artifact/org.apache.tiles/tiles-api -->
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-api</artifactId>
+			<version>3.0.7</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-jsp -->
+		<dependency>
+		    <groupId>org.apache.tiles</groupId>
+		    <artifactId>tiles-jsp</artifactId>
+		    <version>3.0.7</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-request-servlet -->
+		<dependency>
+		    <groupId>org.apache.tiles</groupId>
+		    <artifactId>tiles-request-servlet</artifactId>
+		    <version>1.0.7</version>
+		</dependency>
+		
+		<dependency>
+	        <groupId>commons-fileupload</groupId>
+	        <artifactId>commons-fileupload</artifactId>
+	        <version>1.2.1</version> <!-- makesure you put a correct version here -->
+	    </dependency>
+	    
+        <dependency>
+	        <groupId>commons-io</groupId>
+	        <artifactId>commons-io</artifactId>
+	        <version>2.4</version>
+	    </dependency>
+	    
+		<dependency>
+		    <groupId>javax.validation</groupId>
+		    <artifactId>validation-api</artifactId>
+		    <version>1.1.0.Final</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-validator</artifactId>
+		    <version>5.0.1.Final</version>
+		 </dependency>
+		 
+		 <dependency>
+		    <groupId>org.apache.tomcat</groupId>
+		    <artifactId>tomcat-dbcp</artifactId>
+		    <version>7.0.55</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.json/json -->
+		<dependency>
+		    <groupId>org.json</groupId>
+		    <artifactId>json</artifactId>
+		    <version>20190722</version>
+		</dependency>
+		
+	</dependencies>
+  <build>
+		<plugins>
+		    <plugin>    
+		        <artifactId>maven-compiler-plugin</artifactId>
+		        <configuration>
+		            <source>1.8</source>
+		            <target>1.8</target>
+		        </configuration>
+		    </plugin>
+		</plugins>
+		<finalName>ecart</finalName>
+	</build>
+</project>
